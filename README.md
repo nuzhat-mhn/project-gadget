@@ -23,9 +23,9 @@ For managing and handiling data i use **localStorage** & **contex API** booth.
 4 . you can sort your product item's on therir prices.  
 5 . you can wishlist your products.
 
-## code link
+## Requirement link
 
-[code-link](https://github.com/programming-hero-web-course2/b10a8-gadget-heaven-md-neloy)
+[Requirement-link](https://drive.google.com/file/d/1fwNqylN4_iK6KJwZ7k91k2vK3xT0q2gX/view?usp=sharing)
 
 ## live link
 
