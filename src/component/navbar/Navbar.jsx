@@ -4,9 +4,11 @@ import { GiRoyalLove } from "react-icons/gi";
 import { NavLink, useLocation } from "react-router-dom";
 import { getaddcardData, getwishlistData } from "../utilities/Localstorage";
 import { AssestContext } from "../../main";
+import logo from "../../assets/favicon-16x16.png";
+
 const Navbar = () => {
   const currentlocation = useLocation();
-  document.title = currentlocation.pathname;
+
   // context
   const { cartData, setCartData, setWishlist, wishlist } =
     useContext(AssestContext);
@@ -17,6 +19,7 @@ const Navbar = () => {
     const getWishlistData = getwishlistData();
     setWishlist(getWishlistData);
   }, []);
+
   return (
     <div
       style={{
@@ -65,7 +68,12 @@ const Navbar = () => {
                 </NavLink>
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">Gadget Heaven</a>
+            <a className="btn btn-ghost text-xl">
+              <div className="w-[30px]">
+                <img src={logo} alt="" className="w-full object-cover" />
+              </div>
+              Gadget Heaven
+            </a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 lg:flex gap-3">

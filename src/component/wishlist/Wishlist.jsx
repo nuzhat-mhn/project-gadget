@@ -8,7 +8,7 @@ import {
 import AddWishItem from "./addWishlistItem/AddWishItem";
 import { AssestContext } from "../../main";
 
-const Wishlist = () => {
+const Wishlist = ({ warn, successfull, remove }) => {
   const { addToWishlist, addToCart, wishlist } = useContext(AssestContext);
   const [localwishlistData, setlocalwishlistData] = useState(null);
   useEffect(() => {
@@ -23,11 +23,12 @@ const Wishlist = () => {
     );
 
     if (copy) {
-      alert("This item is already added");
+      warn();
     } else {
       setAddData(item);
       const updatedCart = [...addcartItem, item];
       addToCart(updatedCart);
+      successfull();
     }
   };
 
@@ -37,6 +38,7 @@ const Wishlist = () => {
     const wishlistData = getwishlistData();
     setlocalwishlistData(wishlistData);
     addToWishlist(wishlistData);
+    remove();
   };
   return (
     <div>

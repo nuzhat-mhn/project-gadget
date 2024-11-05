@@ -7,11 +7,12 @@ import {
 import AddcartItem from "./addcartItem/AddcartItem";
 import { AssestContext } from "../../main";
 import { useNavigate } from "react-router-dom";
-
-const Cart = ({ setloalData, localData }) => {
+import { HiCheckBadge } from "react-icons/hi2";
+const Cart = ({ setloalData, localData, remove }) => {
   // context
   const { addToCart, cartData, setWishlist } = useContext(AssestContext);
   const [price, setprice] = useState(0);
+  const [modalprice, setmodalprice] = useState(0);
   useEffect(() => {
     const Localstoragedata = getaddcardData();
     setloalData(Localstoragedata);
@@ -23,6 +24,7 @@ const Cart = ({ setloalData, localData }) => {
     const Localstoragedata = getaddcardData();
     setloalData(Localstoragedata);
     addToCart(Localstoragedata);
+    remove();
   };
   // set the total price of product
   const sumOfPrice = () => {
@@ -31,6 +33,11 @@ const Cart = ({ setloalData, localData }) => {
       0
     );
     setprice(totalprice);
+  };
+  // set the price for show the modal
+  const sumOfModalPrice = () => {
+    const total = cartData?.reduce((sum, item) => sum + (item.price || 0), 0);
+    setmodalprice(total);
   };
   // handlesort function
   const handlesort = () => {
@@ -41,6 +48,7 @@ const Cart = ({ setloalData, localData }) => {
   // handlemodal function
   const handlemodal = () => {
     document.getElementById("my_modal_5").showModal();
+    sumOfModalPrice();
     clearAll();
     addToCart([]);
     setWishlist([]);
@@ -54,8 +62,13 @@ const Cart = ({ setloalData, localData }) => {
     <div>
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Thanks for Purchasing</h3>
-          <p className="py-4">price: {price}</p>
+          <div className="flex justify-center items-center ">
+            <HiCheckBadge className="text-green-500 text-2xl" />
+          </div>
+          <h3 className="font-bold text-lg text-center">
+            Thanks for Purchasing
+          </h3>
+          <p className="py-4">price: {modalprice}</p>
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}

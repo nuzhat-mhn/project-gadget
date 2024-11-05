@@ -7,12 +7,36 @@ import {
   setWishlistData,
 } from "../utilities/Localstorage";
 import { useContext } from "react";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // context
 import { AssestContext } from "../../main";
+import { Helmet } from "react-helmet-async";
 const ProductDetails = () => {
   const params = useParams();
   const allproduct = useLoaderData();
+
+  // tostify
+  const successfullcard = () => {
+    toast.success("product added to the cart", {
+      position: "top-left",
+    });
+  };
+  const warncard = () => {
+    toast.warn("product already Added to the cart!", {
+      position: "top-left",
+    });
+  };
+  const successfullWishlist = () => {
+    toast.success("product added to the wishlist", {
+      position: "top-left",
+    });
+  };
+  const warnWishlist = () => {
+    toast.warn("Product is already to the wishlist!", {
+      position: "top-left",
+    });
+  };
   const findproduct = allproduct.find(
     (product) => product.product_id === params.id
   );
@@ -35,11 +59,12 @@ const ProductDetails = () => {
     );
 
     if (copy) {
-      alert("This item is already added");
+      warncard();
     } else {
       setAddData(item);
       const updatedCart = [...addcartItem, item];
       addToCart(updatedCart);
+      successfullcard();
     }
   };
 
@@ -50,15 +75,20 @@ const ProductDetails = () => {
       (element) => element.product_id == item.product_id
     );
     if (copy) {
-      alert("This data is alreay Whislist");
+      warnWishlist();
     } else {
       setWishlistData(item);
       const getAddcartData = getwishlistData();
       addToWishlist(getAddcartData);
+      successfullWishlist();
     }
   };
   return (
     <div>
+      <ToastContainer />
+      <Helmet>
+        <title>Product-Details</title>
+      </Helmet>
       <div className="bg-brand text-white pt-7">
         <div className="w-[73%] mx-auto pb-[200px]">
           <h1 className="text-[32px] font-bold text-center">Product Details</h1>

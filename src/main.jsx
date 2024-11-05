@@ -9,6 +9,7 @@ import Home from "./component/home/Home.jsx";
 import Statistic from "./component/statistic/Statistic.jsx";
 import Errorpage from "./component/errorPage/Errorpage.jsx";
 import ProductDetails from "./component/productDetails/ProductDetails.jsx";
+import { HelmetProvider } from "react-helmet-async";
 
 export const AssestContext = createContext();
 
@@ -64,7 +65,9 @@ const route = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AssestProvider>
-      <RouterProvider router={route} />
+      <HelmetProvider>
+        <RouterProvider router={route} />
+      </HelmetProvider>
     </AssestProvider>
   </StrictMode>
 );

@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
 const Banner = () => {
+  //handledashboard function
+  const navhook = useNavigate();
+  const handledashboard = () => {
+    navhook("/dashboard");
+  };
   return (
     <div className="w-[73%] mx-auto pb-[200px]">
       <h1 className="text-[56px] font-bold text-center">
@@ -9,7 +15,7 @@ const Banner = () => {
         level. From smart devices to the coolest accessories, we have it all!
       </p>
       <div className="flex justify-center items-center">
-        <a href="#" className="btn">
+        <a href="#" className="btn" onClick={handledashboard}>
           Shop Now
         </a>
       </div>

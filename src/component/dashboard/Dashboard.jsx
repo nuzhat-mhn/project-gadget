@@ -1,15 +1,37 @@
 import { useState } from "react";
 import Cart from "../cart/Cart";
 import Wishlist from "../wishlist/Wishlist";
-
+import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Dashboard = () => {
   const [togole, settogole] = useState(false);
   const [localData, setloalData] = useState(null);
   const hangletogol = () => {
     settogole(!togole);
   };
+  // tostify
+  const successfull = () => {
+    toast.success("Product is added to the cart", {
+      position: "top-left",
+    });
+  };
+  const warn = () => {
+    toast.warn("This product is already Added !", {
+      position: "top-left",
+    });
+  };
+  const remove = () => {
+    toast.error("Remove proudct from the cart !", {
+      position: "top-left",
+    });
+  };
   return (
     <div>
+      <ToastContainer />
+      <Helmet>
+        <title>Dashboard page</title>
+      </Helmet>
       <div className="bg-brand text-white pt-7">
         <div className="w-[73%] mx-auto py-8">
           <h1 className="text-[32px] font-bold text-center">Dashboard</h1>
@@ -38,10 +60,14 @@ const Dashboard = () => {
       </div>
       <div className="container mx-auto">
         <div className="" style={{ display: togole ? "none" : "block" }}>
-          <Cart localData={localData} setloalData={setloalData} />
+          <Cart
+            localData={localData}
+            setloalData={setloalData}
+            remove={remove}
+          />
         </div>
         <div className="" style={{ display: togole ? "block" : "none" }}>
-          <Wishlist />
+          <Wishlist successfull={successfull} warn={warn} remove={remove} />
         </div>
       </div>
     </div>
