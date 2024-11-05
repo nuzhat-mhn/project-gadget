@@ -15,7 +15,6 @@ const Cart = ({ setloalData, localData }) => {
   useEffect(() => {
     const Localstoragedata = getaddcardData();
     setloalData(Localstoragedata);
-    console.log("cartDatea");
     sumOfPrice();
   }, [cartData]);
   // delete item from local storage and also the product cart
@@ -35,7 +34,8 @@ const Cart = ({ setloalData, localData }) => {
   };
   // handlesort function
   const handlesort = () => {
-    const sortedData = [...localData].sort((a, b) => a.price - b.price);
+    const getlocalStoredata = getaddcardData();
+    const sortedData = [...getlocalStoredata].sort((a, b) => a.price - b.price);
     setloalData(sortedData);
   };
   // handlemodal function
