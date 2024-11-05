@@ -1,0 +1,112 @@
+[
+  {
+    "product_id": "LAP001",
+    "product_title": "UltraBook Pro 15",
+    "product_image": "https://i.ibb.co.com/SmKfpVb/pexels-mikhail-nilov-7679186.jpg",
+    "category": "Laptops",
+    "price": 1200,
+    "description": "High-performance laptop for professional work.",
+    "Specification": ["16GB RAM", "512GB SSD", "Intel i7 Processor"],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "LAP002",
+    "product_title": "SlimBook X13",
+    "product_image": "https://i.ibb.co.com/M9WYMgd/pexels-life-of-pix-7974.jpg",
+    "category": "Laptops",
+    "price": 850,
+    "description": "Lightweight laptop with a long-lasting battery.",
+    "Specification": ["8GB RAM", "256GB SSD", "Intel i5 Processor"],
+    "availability": true,
+    "rating": 4.2
+  },
+  {
+    "product_id": "LAP003",
+    "product_title": "Gaming Beast 17",
+    "product_image": "https://i.ibb.co.com/SmKfpVb/pexels-mikhail-nilov-7679186.jpg",
+    "category": "Laptops",
+    "price": 1500,
+    "description": "Gaming laptop with high refresh rate display.",
+    "Specification": ["32GB RAM", "1TB SSD", "NVIDIA RTX 3070"],
+    "availability": false,
+    "rating": 4.7
+  },
+  {
+    "product_id": "LAP004",
+    "product_title": "Creative Studio 14",
+    "product_image": "https://i.ibb.co.com/vksC8XJ/pexels-pixabay-221011.jpg",
+    "category": "Laptops",
+    "price": 1400,
+    "description": "Laptop designed for graphic design and video editing.",
+    "Specification": ["16GB RAM", "512GB SSD", "AMD Ryzen 7"],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "LAP005",
+    "product_title": "Office Companion 13",
+    "product_image": "https://i.ibb.co.com/6F14hDr/pexels-natri-129208.jpg",
+    "category": "Laptops",
+    "price": 700,
+    "description": "Affordable laptop for daily office tasks.",
+    "Specification": ["8GB RAM", "256GB SSD", "Intel i3 Processor"],
+    "availability": true,
+    "rating": 4.0
+  },
+  {
+    "product_id": "LAP006",
+    "product_title": "TravelMate E15",
+    "product_image": "https://i.ibb.co.com/XX5JpzQ/pexels-morningtrain-18105.jpg",
+    "category": "Laptops",
+    "price": 950,
+    "description": "Portable laptop with a durable build for travelers.",
+    "Specification": ["16GB RAM", "512GB SSD", "Intel i5 Processor"],
+    "availability": false,
+    "rating": 4.3
+  },
+  {
+    "product_id": "SPH001",
+    "product_title": "Galaxy Flex",
+    "product_image": "https://i.ibb.co.com/X5LMgD4/pexels-jessbaileydesign-788946.jpg",
+    "category": "Smartphones",
+    "price": 650,
+    "description": "Affordable smartphone with a sleek design.",
+    "Specification": ["6GB RAM", "128GB Storage", "Snapdragon 730"],
+    "availability": true,
+    "rating": 4.1
+  },
+  {
+    "product_id": "SPH002",
+    "product_title": "Pixel Max Pro",
+    "product_image": "https://i.ibb.co.com/YbP49qs/pexels-luckysam-47261.jpg",
+    "category": "Smartphones",
+    "price": 800,
+    "description": "High-end smartphone with AI-enhanced camera.",
+    "Specification": ["8GB RAM", "256GB Storage", "Google Tensor"],
+    "availability": false,
+    "rating": 4.6
+  },
+  {
+    "product_id": "TAB001",
+    "product_title": "MediaTab 10",
+    "product_image": "https://i.ibb.co.com/5WZBhby/pexels-ingo-1682821.jpg",
+    "category": "smartWacth",
+    "price": 500,
+    "description": "Tablet with a 10-inch display for media consumption.",
+    "Specification": ["4GB RAM", "64GB Storage", "Quad-Core Processor"],
+    "availability": true,
+    "rating": 4.0
+  },
+  {
+    "product_id": "TAB002",
+    "product_title": "ProTab 12",
+    "product_image": "https://i.ibb.co.com/d6Tj3Zz/pexels-tdcat-437038.jpg",
+    "category": "smartWacth",
+    "price": 950,
+    "description": "High-end tablet with stylus support for professionals.",
+    "Specification": ["8GB RAM", "128GB Storage", "Octa-Core Processor"],
+    "availability": false,
+    "rating": 4.5
+  }
+]
