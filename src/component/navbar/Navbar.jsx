@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { FaCartPlus } from "react-icons/fa6";
 import { GiRoyalLove } from "react-icons/gi";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { getaddcardData, getwishlistData } from "../utilities/Localstorage";
 import { AssestContext } from "../../main";
 import logo from "../../assets/favicon-16x16.png";
@@ -95,10 +95,10 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <a className="btn">
+            <Link to="/dashboard" className="btn">
               <FaCartPlus />
               {cartData.length}
-            </a>
+            </Link>
             <a className="btn ml-4">
               <GiRoyalLove />
               {wishlist.length}
