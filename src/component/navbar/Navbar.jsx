@@ -66,6 +66,9 @@ const Navbar = () => {
                 <NavLink to="/dashboard">
                   <li>DashBoard</li>
                 </NavLink>
+                <NavLink to="/help">
+                  <li>Help</li>
+                </NavLink>
               </ul>
             </div>
             <a className="btn btn-ghost text-xl">
@@ -85,6 +88,9 @@ const Navbar = () => {
               </NavLink>
               <NavLink to="/dashboard">
                 <li>DashBoard</li>
+              </NavLink>
+              <NavLink to="/help">
+                <li>Help</li>
               </NavLink>
             </ul>
           </div>

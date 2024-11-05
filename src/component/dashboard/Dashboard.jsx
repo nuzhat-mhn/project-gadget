@@ -30,7 +30,7 @@ const Dashboard = () => {
     <div>
       <ToastContainer />
       <Helmet>
-        <title>Dashboard page</title>
+        <title>Dashboard page|Gadget Haven</title>
       </Helmet>
       <div className="bg-brand text-white pt-7">
         <div className="w-[73%] mx-auto py-8">

@@ -43,7 +43,7 @@ const Wishlist = ({ warn, successfull, remove }) => {
   return (
     <div>
       <div className="container mx-auto">
-        <h1>hello Wishlist</h1>
+        <h1 className="text-3xl text-black font-bold my-10">Wishlist</h1>
         {localwishlistData?.map((item) => {
           return (
             <AddWishItem

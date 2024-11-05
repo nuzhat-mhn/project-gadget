@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Home page</title>
+        <title>Home page|Gadget Haven</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className=" m-7 mt-0 ">

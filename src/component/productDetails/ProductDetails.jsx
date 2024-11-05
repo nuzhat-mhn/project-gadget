@@ -87,7 +87,7 @@ const ProductDetails = () => {
     <div>
       <ToastContainer />
       <Helmet>
-        <title>Product-Details</title>
+        <title>Product-Details|Gadget Haven</title>
       </Helmet>
       <div className="bg-brand text-white pt-7">
         <div className="w-[73%] mx-auto pb-[200px]">
