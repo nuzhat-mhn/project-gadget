@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import cart1 from "../../assets/addtocart1.png";
 import wishlist1 from "../../assets/wishlistcart.png";
@@ -18,6 +18,15 @@ const Help = () => {
       settogol("4");
     } else if (id === 5) {
       settogol("5");
+    }
+  };
+  const imgref = useRef(null);
+  const handlemouse = (e) => {
+    const rect = imgref.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    if (imgref.current) {
+      imgref.current.style.transformOrigin = `${x}% ${y}%`;
     }
   };
   return (
@@ -108,8 +117,16 @@ const Help = () => {
                 clickng the <b className="text-yellow-300">purchase</b> button.
               </p>
               <div className="card card-compact bg-base-100 w-96 shadow-xl mt-3 w-full">
-                <figure className="w-full">
-                  <img src={purcase} alt="Shoes" className="w-full" />
+                <figure
+                  className="w-full cursor-zoom-in group"
+                  onMouseMove={handlemouse}
+                  ref={imgref}
+                >
+                  <img
+                    src={purcase}
+                    alt="Shoes"
+                    className="w-full transform transition-transform duration-300 ease-linear origin-center group-hover:scale-150"
+                  />
                 </figure>
               </div>
             </div>
@@ -132,8 +149,8 @@ const Help = () => {
                 this button your item is added to the cart.
               </p>
               <div className="card card-compact bg-base-100 shadow-xl mt-3">
-                <figure>
-                  <img src={cart1} alt="Shoes" />
+                <figure className="transition-all ease duration-300 transform origin-center">
+                  <img src={cart1} alt="Shoes" className="hover:scale-110" />
                 </figure>
               </div>
             </div>
