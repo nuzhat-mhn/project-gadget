@@ -8,6 +8,7 @@ import AddcartItem from "./addcartItem/AddcartItem";
 import { AssestContext } from "../../main";
 import { useNavigate } from "react-router-dom";
 import { HiCheckBadge } from "react-icons/hi2";
+import PaymentMethod from "../paymentMethod/PaymentMethod";
 const Cart = ({ setloalData, localData, remove }) => {
   // context
   const { addToCart, cartData, setWishlist } = useContext(AssestContext);
@@ -60,15 +61,16 @@ const Cart = ({ setloalData, localData, remove }) => {
   };
   return (
     <div>
+      {/* modal */}
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <div className="flex justify-center items-center ">
             <HiCheckBadge className="text-green-500 text-2xl" />
           </div>
-          <h3 className="font-bold text-lg text-center">
+          {/* <h3 className="font-bold text-lg text-center">
             Thanks for Purchasing
-          </h3>
-          <p className="py-4">price: {modalprice}</p>
+          </h3> */}
+          <PaymentMethod modalprice={modalprice} />
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}

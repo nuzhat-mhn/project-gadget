@@ -33,13 +33,13 @@ const DisplayAllCard = () => {
     }
   };
   return (
-    <div>
+    <div className="container mx-auto">
       <h2 className="font-bold text-4xl text-center mb-7">
         Explore Cutting-Edge Gadgets
       </h2>
-      <div className="grid grid-cols-[20%_80%] gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-[20%_80%] gap-6">
         <ProductNabar handlesort={handlesort} />
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {products.length !== 0 ? (
             products.map((product) => {
               return (
