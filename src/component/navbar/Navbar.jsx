@@ -10,7 +10,7 @@ const Navbar = () => {
   const currentlocation = useLocation();
 
   // context
-  const { cartData, setCartData, setWishlist, wishlist } =
+  const { cartData, setCartData, setWishlist, wishlist, user } =
     useContext(AssestContext);
 
   useEffect(() => {
@@ -95,14 +95,22 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <Link to="/dashboard" className="btn">
-              <FaCartPlus />
-              {cartData.length}
-            </Link>
-            <a className="btn ml-4">
-              <GiRoyalLove />
-              {wishlist.length}
-            </a>
+            {user ? (
+              <>
+                <Link to="/dashboard" className="btn">
+                  <FaCartPlus />
+                  {cartData.length}
+                </Link>
+                <Link className="btn ml-4">
+                  <GiRoyalLove />
+                  {wishlist.length}
+                </Link>
+              </>
+            ) : (
+              <>
+                <button className="btn">Login</button>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -18,6 +18,7 @@ export const AssestProvider = ({ children }) => {
   const [cartData, setCartData] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
+  const [user, setuser] = useState();
   const addToCart = (item) => setCartData(item);
   const addToWishlist = (item) => setWishlist(item);
   return (
@@ -29,6 +30,8 @@ export const AssestProvider = ({ children }) => {
         setWishlist,
         addToCart,
         addToWishlist,
+        user,
+        setuser,
       }}
     >
       {children}

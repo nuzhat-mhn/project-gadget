@@ -4,10 +4,11 @@ import {
   FaApplePay,
   FaGooglePay,
 } from "react-icons/fa";
-
-const PaymentMethod = ({ modalprice }) => {
+import bkash from "../../assets/bkashlogo.png";
+import nagad from "../../assets/nagadlogo.png";
+const PaymentMethod = ({ modalprice, paymentSuccess }) => {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-8">
       <h2
         className="text-3xl font-bold text-center mb-10"
         style={{ color: "rgb(149, 56, 226)" }}
@@ -16,62 +17,36 @@ const PaymentMethod = ({ modalprice }) => {
       </h2>
 
       {/* Payment Options */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {/* Credit Card */}
-        <div className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-fit">
+        {/* Cash on Delivery */}
+        <div className="flex flex-col justify-center text-center items-center p-3 bg-white shadow-md rounded-lg">
           <FaCreditCard
             className="text-4xl mb-4"
             style={{ color: "rgb(149, 56, 226)" }}
           />
-          <h3 className="text-lg font-medium mb-2">Credit/Debit Card</h3>
-          <p className="text-sm text-gray-600 text-center">
-            Pay securely with your credit or debit card.
-          </p>
+          <h3 className="text-lg font-medium mb-2">Cash on Delivery</h3>
         </div>
 
-        {/* PayPal */}
-        <div className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg">
-          <FaPaypal
-            className="text-4xl mb-4"
-            style={{ color: "rgb(149, 56, 226)" }}
-          />
-          <h3 className="text-lg font-medium mb-2">PayPal</h3>
-          <p className="text-sm text-gray-600 text-center">
-            Use your PayPal account for fast checkout.
-          </p>
+        {/* Nagad */}
+        <div className="flex flex-col justify-center text-center items-center p-3 bg-white shadow-md rounded-lg">
+          <div className="w-14">
+            <img src={nagad} alt="" />
+          </div>
+          <h3 className="text-lg font-medium mb-2">Nagad</h3>
         </div>
 
-        {/* Apple Pay */}
-        <div className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg">
-          <FaApplePay
-            className="text-4xl mb-4"
-            style={{ color: "rgb(149, 56, 226)" }}
-          />
-          <h3 className="text-lg font-medium mb-2">Apple Pay</h3>
-          <p className="text-sm text-gray-600 text-center">
-            Pay easily with Apple Pay on your device.
-          </p>
-        </div>
-
-        {/* Google Pay */}
-        <div className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg">
-          <FaGooglePay
-            className="text-4xl mb-4"
-            style={{ color: "rgb(149, 56, 226)" }}
-          />
-          <h3 className="text-lg font-medium mb-2">Google Pay</h3>
-          <p className="text-sm text-gray-600 text-center">
-            Use Google Pay for a seamless checkout.
-          </p>
+        {/* Bkash */}
+        <div className="flex flex-col justify-center text-center items-center p-3 bg-white shadow-md rounded-lg">
+          <div className="w-14">
+            <img src={bkash} alt="" />
+          </div>
+          <h3 className="text-lg font-medium mb-2">Bkash</h3>
         </div>
       </div>
 
       {/* Card Details Form */}
       <div className="mt-12">
-        <h3
-          className="text-xl font-semibold mb-4"
-          style={{ color: "rgb(149, 56, 226)" }}
-        >
+        <h3 className="text-xl font-semibold mb-4 bg-[rgb(149, 56, 226)]">
           Enter Card Details
         </h3>
         <form className="bg-white shadow-md rounded-lg p-6 space-y-6">
@@ -127,6 +102,7 @@ const PaymentMethod = ({ modalprice }) => {
           <button
             type="submit"
             className="btn btn-block"
+            onClick={paymentSuccess}
             style={{
               backgroundColor: "rgb(149, 56, 226)",
               borderColor: "rgb(149, 56, 226)",
