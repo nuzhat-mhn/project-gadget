@@ -11,6 +11,7 @@ import Errorpage from "./component/errorPage/Errorpage.jsx";
 import ProductDetails from "./component/productDetails/ProductDetails.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import Help from "./component/help/Help.jsx";
+import Login from "./component/login/Login.jsx";
 
 export const AssestContext = createContext();
 
@@ -66,6 +67,10 @@ const route = createBrowserRouter([
       {
         path: "/help",
         element: <Help />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
