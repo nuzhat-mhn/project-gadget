@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const SingleProduct = ({ product }) => {
   return (
     <div>
-      <div className="card card-compact bg-base-100 w-96 shadow-xl">
+      <div className="card card-compact bg-base-100 w-full shadow-xl">
         <figure>
           <img src={product.product_image} alt={product.product_title} />
         </figure>
